@@ -11,6 +11,9 @@ This repo is meant to live at `~/Projects/github/personal/agents` and be linked 
 ├── AGENTS.md           # Global instructions (canonical)
 ├── CLAUDE.md           # Pointer → ~/.agents/AGENTS.md
 ├── .skill-lock.json    # Registry install metadata (source / hash)
+├── rules/              # Cursor user rules (canonical); ~/.cursor/rules → here
+│   ├── *.mdc
+│   └── …
 ├── skills/             # All skills tracked in git (registry + personal)
 │   ├── python/         # Personal
 │   ├── golang/         # Personal
@@ -22,6 +25,7 @@ This repo is meant to live at `~/Projects/github/personal/agents` and be linked 
 
 - **One instruction file:** edit `AGENTS.md` only. `CLAUDE.md` is a text path so Claude Code can follow it without duplicating content.
 - **Lean globals:** communication, engineering, git safety. Stack rules live in skills.
+- **Cursor rules in git:** edit `rules/*.mdc` here; `~/.cursor/rules` is a symlink so Cursor loads them globally.
 - **Repo wins:** project-local `AGENTS.md` / `CLAUDE.md` override this repo.
 - **Skills in git:** track the whole `skills/` tree so personal edits are diffable and recoverable. `.skill-lock.json` still records upstream source/hash for reinstalls.
 
@@ -35,6 +39,10 @@ mkdir -p "$HOME/.claude" "$HOME/.codex"
 ln -sfn "$HOME/.agents/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 ln -sfn "$HOME/.agents/skills"    "$HOME/.claude/skills"
 ln -sfn "$HOME/.agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
+
+# Cursor global rules (replace a real ~/.cursor/rules dir if present)
+mkdir -p "$HOME/.cursor"
+ln -sfn "$HOME/.agents/rules" "$HOME/.cursor/rules"
 ```
 
 After clone, skills are already in the tree. Optionally refresh from upstream with the Skills CLI (see below).
@@ -66,6 +74,7 @@ If the CLI prints `Failed to fetch tree for …` and then `All global skills are
 |---|---|
 | `AGENTS.md`, `CLAUDE.md`, `README.md` | `.cursor/` |
 | `.skill-lock.json` | |
+| Entire `rules/` tree | |
 | Entire `skills/` tree | |
 | `.gitignore` | |
 

@@ -1,0 +1,20 @@
+---
+description: Traditional Chinese (zh-TW) for agent skill conversations and human-facing docs
+alwaysApply: true
+---
+
+# Agent skills language (zh-TW)
+
+Matt Pocock / shared engineering skills live at **user scope** (`~/.agents/skills/`). Per-repo work only runs `/setup-matt-pocock-skills`, which writes project config (`docs/agents/`, `CONTEXT.md`, `AGENTS.md` / `CLAUDE.md` pointers) — not a second copy of the skill pack.
+
+When using those skills (including `ask-matt`, `grill-me`, `grilling`, `grill-with-docs`, `handoff`, `wait-what`, `to-spec`, `to-tickets`, `implement`, `setup-matt-pocock-skills`, and related skills):
+
+- Speak to the user in **Traditional Chinese (zh-TW)**.
+- Keep code, identifiers, file paths, shell commands, git/commit messages, github issues, github pull requests, and API names in English.
+- Code comments stay English (per project coding standards).
+- For `CONTEXT.md` / ADRs: keep term keys and technical names in English; Chinese glosses or explanations are allowed where helpful.
+- Human-facing artifacts from skills (grilling questions, handoff summaries, questionnaires, `.scratch` ticket prose): Traditional Chinese; keep technical names in English.
+
+Skill instruction files themselves may remain English; only user-facing output must be zh-TW.
+
+Repo-local skills under `.agents/skills/` (e.g. `alembic-check`) follow the same language rules when talking to the user.
