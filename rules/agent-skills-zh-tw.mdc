@@ -7,7 +7,7 @@ alwaysApply: true
 
 Matt Pocock / shared engineering skills live at **user scope** (`~/.agents/skills/`). Per-repo work only runs `/setup-matt-pocock-skills`, which writes project config (`docs/agents/`, `CONTEXT.md`, `AGENTS.md` / `CLAUDE.md` pointers) — not a second copy of the skill pack.
 
-When using those skills (including `ask-matt`, `grill-me`, `grilling`, `grill-with-docs`, `handoff`, `wait-what`, `to-spec`, `to-tickets`, `implement`, `setup-matt-pocock-skills`, and related skills):
+When using those skills (including `ask-matt`, `grill-me`, `grilling`, `grill-with-docs`, `handoff`, `wait-what`, `to-spec`, `to-tickets`, `implement`, `to-pr`, `setup-matt-pocock-skills`, and related skills):
 
 - Speak to the user in **Traditional Chinese (zh-TW)**.
 - Keep code, identifiers, file paths, shell commands, git/commit messages, github issues, github pull requests, and API names in English.
