@@ -1,0 +1,3 @@
+interface:
+  display_name: "Format"
+  short_description: "Run repo formatter and classify the diff"

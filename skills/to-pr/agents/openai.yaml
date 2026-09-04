@@ -1,0 +1,5 @@
+interface:
+  display_name: "To PR"
+  short_description: "Open a GitHub PR for the current branch"
+policy:
+  allow_implicit_invocation: false

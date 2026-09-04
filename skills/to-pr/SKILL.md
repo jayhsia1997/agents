@@ -12,97 +12,35 @@ Turn **already committed** work on a **topic branch** into a GitHub Pull Request
 
 This skill fills the gap after `/implement` + `/code-review`. It does **not** review the diff (that is `/code-review`) and does **not** split a pile of work (that is `/split-to-prs`).
 
+Before creating the PR, users must review the content first.
+
 ## Hard rules
 
 - **PR-only onto the default branch** (usually `main`). Never `git merge` into local `main` as a substitute for merging on GitHub. Never push `main` with topic-branch commits that have not been merged via PR.
 - **Do not merge** the PR, **do not tag**, **do not publish**. After create, wait for CI to go green; the human merges on GitHub.
-- **Do not commit** unless the user explicitly asked to commit in this turn. Uncommitted work → stop and ask.
+- **Do not commit** unless the user explicitly asked to commit in this turn, **except** the format-only commit allowed in [process.md](process.md) after `/format`.
 - **Do not** `--force` push, `--no-verify`, or skip hooks.
 - Use **`gh`** for all GitHub operations. Infer the repo from `git remote`.
 - If the work should be several PRs, stop and tell the user to run `/split-to-prs` first.
-- Before creating the PR, users must review the content first.
 
 ## Kind of PR
 
 Pick one:
 
-| Kind | When |
-|------|------|
-| **Routine** | Feature, fix, docs, refactor, tooling. Default. |
+| Kind        | When                                                                                                        |
+| ----------- | ----------------------------------------------------------------------------------------------------------- |
+| **Routine** | Feature, fix, docs, refactor, tooling. Default.                                                             |
 | **Release** | User asked for a release PR, or the repo has a release PR template and the change is a version/release cut. |
 
 If the repo documents a release workflow, follow **that**. Do not invent version-file or changelog conventions. A release PR stays dedicated (release-only diff) unless the user explicitly wants the bump in the same PR as feature work.
 
 ## Process
 
-### 1. Inspect state (parallel)
-
-In the current repo:
-
-```bash
-git status
-git diff
-git branch -vv
-git log --oneline -15
-git rev-parse --abbrev-ref HEAD
-git remote show origin | sed -n 's/.*HEAD branch: //p'
-```
-
-Then, against the **default branch** (use `origin/main` unless `origin/HEAD` says otherwise):
-
-```bash
-git fetch origin
-git log --oneline origin/<default>..HEAD
-git diff origin/<default>...HEAD
-```
-
-Read **all** commits on the branch, not only the latest. Also look for a repo template:
-
-- `.github/PULL_REQUEST_TEMPLATE/default.md`
-- `.github/PULL_REQUEST_TEMPLATE/release.md` (release kind)
-- `.github/pull_request_template.md` / `.github/PULL_REQUEST_TEMPLATE.md`
-
-If the repo documents a PR policy (`.cursor/rules`, `AGENTS.md`, `docs/agents/`), follow that over this skill's defaults.
-
-**Abort / ask if:**
-
-- Uncommitted or unstaged changes exist
-- `HEAD` is `main` (or the default branch) — move work to a topic branch first; do not open a PR from `main`
-- Local `main` has commits that are not on `origin/main` — realign (`git fetch` + reset local `main` to `origin/main` **only if the user asks**; otherwise explain and stop)
-- Empty diff vs the default branch
-
-### 2. Draft title and body
-
-- **Title:** conventional, imperative. Why belongs in the body. Examples: `feat(auth): refresh token on 401`, `fix(booking): reject overlapping slots`, `docs: clarify PR policy`.
-- **Body:** Use [templates.md](./templates.md) as a starting point.
-- Link originating issues/tickets (`Closes #123`) when commits or the conversation reference them.
-- Testing checkboxes must use **this repo's** documented check commands (CI workflow, README, or `AGENTS.md`). Do not copy commands from another stack.
-- PR **base** is the default branch (`main` unless the repo says otherwise).
-
-### 3. Branch, push, create
-
-Only after the draft is ready:
-
-1. Create a topic branch if needed (`feat/…`, `fix/…`, `chore/…`).
-2. Push: `git push -u origin HEAD` (request permissions the environment needs).
-3. Create the PR:
-
-```bash
-gh pr create --title "the pr title" --body "$(cat <<'EOF'
-…filled template…
-EOF
-)"
-```
-
-If a template file should be applied by GitHub itself, you may pass `--template <filename>` when the repo has multiple templates; still fill the body so checkboxes are not left empty.
-
-4. Return the **PR URL**. Remind: merge on GitHub after CI is green; do not merge local `main`.
-
-### 4. After create (do not do unless asked)
-
-- Do **not** `gh pr merge`.
-- Do **not** `git tag` / `git push origin <tag>`.
-- If the repo has a post-merge release/tag step, only list it; do not run it unless the user asks.
+1. **Inspect** — follow [process.md](process.md). Abort when it says to.
+2. **Format** — run `/format` before drafting. If the leftover diff is format-only, let `/format` create the style commit; if substantive uncommitted work remains, stop and ask. Details in process.md.
+3. **Draft** title and body — use the repo template if present; otherwise [templates.md](templates.md). Details in process.md.
+4. **Push and create** — only after the draft is ready. Commands in process.md. Return the **PR URL**.
+5. **After create** — do nothing unless asked (no merge, no tag). List any documented post-merge steps; do not run them.
 
 ## What not to do
 
