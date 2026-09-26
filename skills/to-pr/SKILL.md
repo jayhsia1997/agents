@@ -4,7 +4,7 @@ description: Open a GitHub Pull Request for the current branch with gh, using th
 disable-model-invocation: true
 ---
 
-Respond to the user in Traditional Chinese (zh-TW). Keep code, paths, identifiers, commit messages, PR titles, and PR bodies in English.
+Keep code, paths, identifiers, commit messages, PR titles, and PR bodies in English
 
 # To PR
 
@@ -37,7 +37,7 @@ If the repo documents a release workflow, follow **that**. Do not invent version
 ## Process
 
 1. **Inspect** — follow [process.md](process.md). Abort when it says to.
-2. **Format** — run `/format` before drafting. If the leftover diff is format-only, let `/format` create the style commit; if substantive uncommitted work remains, stop and ask. Details in process.md.
+2. **Format** — run `/document-format` before drafting. If the leftover diff is format-only, let `/document-format` create the style commit; if substantive uncommitted work remains, stop and ask. Details in process.md.
 3. **Draft** title and body — use the repo template if present; otherwise [templates.md](templates.md). Details in process.md.
 4. **Push and create** — only after the draft is ready. Commands in process.md. Return the **PR URL**.
 5. **After create** — do nothing unless asked (no merge, no tag). List any documented post-merge steps; do not run them.

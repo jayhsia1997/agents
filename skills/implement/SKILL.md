@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 Implement the work described by the user in the spec or tickets.
 
-Before you start, checkout to main and pull the latest changes and create a new branch for the work.
+Before you start, check current workspace is in correct repository folder and checkout to main and pull the latest changes and create a new branch for the work.
 
 After creating a new branch, commit any updates to the ADR and Context files made before the branch was created (potentially in the stash).
 
@@ -27,12 +27,16 @@ Type:
 - release: release branch like `release/{version}`
 - spike: spike branch for exploratory work like `spike/{short-description}`
 
+If the task includes anything that does not belong in this repo, ask whether an issue should be opened.
+
 Use /tdd where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
 Once done, use /code-review to review the work.
 
-Commit your work to the current branch.
+Using the /conventional-commit skill, commit your work to the current branch.
 
 Do not open a Pull Request from this skill. When the user asks to ship, they invoke `/to-pr`.
+
+When you have finished the work, tell the user what to do next.

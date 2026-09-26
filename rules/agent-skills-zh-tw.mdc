@@ -1,6 +1,6 @@
 ---
 description: Traditional Chinese (zh-TW) for agent skill conversations and human-facing docs
-alwaysApply: true
+alwaysApply: false
 ---
 
 # Agent skills language (zh-TW)

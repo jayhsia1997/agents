@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ticket Table"
+  short_description: "Show created tickets and blockers in a table"
+  default_prompt: "Use $ticket-table to summarize the tickets just created as a dependency table."

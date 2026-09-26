@@ -1,12 +1,12 @@
 ---
-name: format
+name: document-format
 description: >-
   Run the repo's formatter and import sorter, then classify the resulting diff as
   format-only or substantive. Use when the user asks to format, fix formatting,
   sort imports, or when /to-pr needs a pre-PR format pass.
 ---
 
-# Format
+# Document Format
 
 Apply **this repo's** documented format / lint-fix / import-sort tools. Do not invent a formatter the project does not use.
 

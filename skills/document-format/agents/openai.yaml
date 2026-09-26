@@ -1,0 +1,3 @@
+interface:
+  display_name: "Document Format"
+  short_description: "Run repo document formatter and classify the diff"
