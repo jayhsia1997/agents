@@ -6,4 +6,4 @@ disable-model-invocation: true
 
 Before you start, checkout to main and pull the latest changes.
 
-Run a `/grilling` session, using the `/domain-modeling` skill.
+Call the Skill tool twice, for "grilling" and "domain-modeling".
