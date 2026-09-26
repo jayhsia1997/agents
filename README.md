@@ -49,7 +49,7 @@ After clone, skills are already in the tree. Optionally refresh from upstream wi
 
 ### Updating registry skills
 
-This checkout *is* the global agents home (`~/.agents` → this repo). Registry installs are **global**, tracked in `.skill-lock.json`.
+This checkout _is_ the global agents home (`~/.agents` → this repo). Registry installs are **global**, tracked in `.skill-lock.json`.
 
 ```bash
 npx skills update -g
@@ -70,17 +70,18 @@ If the CLI prints `Failed to fetch tree for …` and then `All global skills are
 
 ## What is versioned
 
-| Tracked | Ignored |
-|---|---|
+| Tracked                               | Ignored    |
+| ------------------------------------- | ---------- |
 | `AGENTS.md`, `CLAUDE.md`, `README.md` | `.cursor/` |
-| `.skill-lock.json` | |
-| Entire `rules/` tree | |
-| Entire `skills/` tree | |
-| `.gitignore` | |
+| `.skill-lock.json`                    |            |
+| Entire `rules/` tree                  |            |
+| Entire `skills/` tree                 |            |
+| `.gitignore`                          |            |
 
 ## Personal skills
 
-| Skill | When |
-|---|---|
-| `python` | uv, ruff, Pydantic v2, FastAPI layering, pytest |
-| `golang` | Wrapped errors, no panic-for-control-flow, interfaces at the consumer |
+| Skill                 | When                                                                  |
+| --------------------- | --------------------------------------------------------------------- |
+| `python`              | uv, ruff, Pydantic v2, FastAPI layering, pytest                       |
+| `golang`              | Wrapped errors, no panic-for-control-flow, interfaces at the consumer |
+| `conventional-commit` | Conventional Commits message from the diff, then create the commit    |
