@@ -41,6 +41,7 @@ If the repo documents a release workflow, follow **that**. Do not invent version
 3. **Draft** title and body — use the repo template if present; otherwise [templates.md](templates.md). Details in process.md.
 4. **Push and create** — only after the draft is ready. Commands in process.md. Return the **PR URL**.
 5. **After create** — do nothing unless asked (no merge, no tag). List any documented post-merge steps; do not run them.
+6. **Change ticket status(If using Linear)** — wait for 10 seconds and move ticket to `In Review` status, and use Linear original Github PR link to link the PR to the ticket.
 
 ## What not to do
 

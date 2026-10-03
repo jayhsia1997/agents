@@ -66,6 +66,8 @@ Work the **frontier**: any ticket whose blockers are all done. For a purely line
 
 Add the tickets to the parent issue as sub-issues. Do NOT close or modify any parent issue.
 
+Apply the `ticket` label to the issue.
+
 <local-ticket-template>
 
 # <NN> — <Ticket title>

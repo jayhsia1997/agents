@@ -1,7 +1,6 @@
 ---
 name: conventional-commit
 description: Draft a Conventional Commits message from the current diff and create the commit.
-disable-model-invocation: true
 ---
 
 # Conventional Commit

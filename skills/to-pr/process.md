@@ -85,3 +85,8 @@ If a template file should be applied by GitHub itself, you may pass `--template 
 - Do **not** `gh pr merge`.
 - Do **not** `git tag` / `git push origin <tag>`.
 - If the repo has a post-merge release/tag step, only list it; do not run it unless the user asks.
+
+## 6. Change ticket status(If using Linear)
+
+- Wait for 10 seconds and move ticket to `In Review` status.
+- Use Linear original Github PR link to link the PR to the ticket.

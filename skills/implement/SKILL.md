@@ -1,16 +1,24 @@
 ---
 name: implement
 description: "Implement a piece of work based on a spec or set of tickets."
-disable-model-invocation: true
+# disable-model-invocation: true
 ---
 
 Implement the work described by the user in the spec or tickets.
 
 Before you start, check current workspace is in correct repository folder and checkout to main and pull the latest changes and create a new branch for the work.
 
+If issue is not in `Todo` status, pause and ask the user to move it to `Todo` status.
+
 After creating a new branch, commit any updates to the ADR and Context files made before the branch was created (potentially in the stash).
 
+Move issue to the `In Progress` status(If using Linear).
+
 Branch name should be in the format `{type}/{issue-number}-{short-description}` except for release and spike branches.
+
+- `{type}/{issue-number}-{short-description}` for Github issues
+- `{type}/{project-name(lower case)}-{issue-number}-{short-description}` for Linear issues
+
 For release branches, the branch name should be `release/{version}`
 For spike branches, the branch name should be `spike/{short-description}`
 
