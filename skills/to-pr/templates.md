@@ -33,6 +33,16 @@ Testing lines must be this repo's actual commands (from CI, README, or `AGENTS.m
 
 - [ ] PR targets **`main`** (or this repo's default branch)
 - [ ] CI green before merge
+
+## Related tickets
+
+<!-- If using Linear, link to Linear tickets here. else put issue numbers here. -->
+
+<!-- Example for Linear: -->
+Closes <Linear Team Name>-<ticket number>
+
+<!-- Example for not using Linear: -->
+Closes #<issue number>
 ```
 
 ## Release

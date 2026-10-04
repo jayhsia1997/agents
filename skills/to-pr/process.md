@@ -57,7 +57,10 @@ This is the **only** commit `/to-pr` may create without an explicit "commit" ask
 
 - **Title:** conventional, imperative. Why belongs in the body. Examples: `feat(auth): refresh token on 401`, `fix(booking): reject overlapping slots`, `docs: clarify PR policy`.
 - **Body:** Prefer the repo's own template file. If none, use [templates.md](templates.md) as a starting point.
-- Link originating issues/tickets (`Closes #123`) when commits or the conversation reference them.
+- Link originating issues/tickets (`Closes #123` ) when commits or the conversation reference them.
+- Link originating tickets (Linear or GitHub) in the PR body when commits or the conversation reference them.
+  - Linear ticket: end the PR body with `Closes ROO-<ticket number>`.
+  - GitHub issue: end the PR body with `Closes #<github-n>`.
 - Testing checkboxes must use **this repo's** documented check commands (CI workflow, README, or `AGENTS.md`). Do not copy commands from another stack.
 - PR **base** is the default branch (`main` unless the repo says otherwise).
 
@@ -88,5 +91,5 @@ If a template file should be applied by GitHub itself, you may pass `--template 
 
 ## 6. Change ticket status(If using Linear)
 
-- Wait for 10 seconds and move ticket to `In Review` status.
-- Use Linear original Github PR link to link the PR to the ticket.
+- Wait ~10s, set the ticket to `In Review`, and attach the GitHub PR URL via Linear `links` (Linear Diffs / PR review).
+- Done-on-merge still requires `Closes ROO-<n>` in the PR body; the attachment alone is not enough.

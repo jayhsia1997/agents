@@ -16,8 +16,8 @@ Move issue to the `In Progress` status(If using Linear).
 
 Branch name should be in the format `{type}/{issue-number}-{short-description}` except for release and spike branches.
 
-- `{type}/{issue-number}-{short-description}` for Github issues
-- `{type}/{project-name(lower case)}-{issue-number}-{short-description}` for Linear issues
+Github issue branch name format: `{type}/{issue-number}-{short-description}`
+Linear issue branch name format: `{type}/{team-identifier(lower case)}-{issue-number}-{short-description}`
 
 For release branches, the branch name should be `release/{version}`
 For spike branches, the branch name should be `spike/{short-description}`
@@ -43,7 +43,7 @@ Run typechecking regularly, single test files regularly, and the full test suite
 
 Once done, use /code-review to review the work.
 
-Using the /conventional-commit skill, commit your work to the current branch.
+Using the `/conventional-commit` skill, commit your work to the current branch and push the branch to the remote repository.
 
 Do not open a Pull Request from this skill. When the user asks to ship, they invoke `/to-pr`.
 

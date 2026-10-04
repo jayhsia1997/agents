@@ -29,49 +29,24 @@ Done when `git diff --cached` is exactly the change this commit should record.
 
 ## Message
 
-```
+<message-template>
+
 <type>(<scope>): <description>
 
-<body>
+<long-description>
+- <long-description-line-1>
+- <long-description-line-2>
+- <long-description-line-n>
+</long-description>
 
-<footer>
-```
+</message-template>
 
 - **type** (required): `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 - **scope**: optional noun for the area, no spaces
 - **description** (required): imperative mood (`add`, not `added`), lowercase, no trailing period
-- **body**: optional; why the change was made
-- **footer**: breaking changes and issue references
-
-A breaking change puts `!` after the type or scope, and a `BREAKING CHANGE:` footer.
-
-```
-feat(parser): add ability to parse arrays
-fix(ui): correct button alignment
-docs: update README with usage instructions
-refactor: improve performance of data processing
-chore: update dependencies
-feat!: send email on registration
-
-BREAKING CHANGE: email service required
-```
+- **long-description** (required): items to describe the change in more detail
 
 Done when every required field is present, the type is one of the allowed types, and the description is imperative.
-
-## Commit
-
-Pass the message with a HEREDOC. Omit the blank body or footer when unused. Include both when present, separated by a blank line.
-
-```bash
-git commit -m "$(cat <<'EOF'
-type(scope): description
-
-body
-
-footer
-EOF
-)"
-```
 
 Done when a new commit exists. Then run `git status` and report the subject line.
 
