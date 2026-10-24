@@ -18,9 +18,7 @@ The spec should be written in English.
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
-
-4. Apply the `spec` label to the issue.
+3. Write the spec using the template below, then follow the "publish to the issue tracker" workflow in `docs/agents/issue-tracker.md`. Apply `spec` and `ready-for-agent` labels, and verify the published issue and any required synchronization - no need for additional triage. When Linear manages the issue, keep it in `Backlog`.
 
 <spec-title>
 [Spec] <feature-short-description>
@@ -81,3 +79,5 @@ A description of the things that are out of scope for this spec.
 Any further notes about the feature.
 
 </spec-template>
+
+Do not move issue to other statuses, keep it in `Backlog` status if using Linear.

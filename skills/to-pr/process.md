@@ -92,4 +92,7 @@ If a template file should be applied by GitHub itself, you may pass `--template 
 ## 6. Change ticket status(If using Linear)
 
 - Wait ~10s, set the ticket to `In Review`, and attach the GitHub PR URL via Linear `links` (Linear Diffs / PR review).
+- When Linear manages the ticket, verify the native PR attachment; if missing, create it with `attachmentLinkGitHubPR` and read it back.
+- Verify the expected review state after allowing for automation. Update it only when required and still appropriate; do not overwrite completed or canceled states.
 - Done-on-merge still requires `Closes ROO-<n>` in the PR body; the attachment alone is not enough.
+- Do not close the ticket merely because the PR was created.

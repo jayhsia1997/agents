@@ -36,13 +36,11 @@ Testing lines must be this repo's actual commands (from CI, README, or `AGENTS.m
 
 ## Related tickets
 
-<!-- If using Linear, link to Linear tickets here. else put issue numbers here. -->
+<!-- Follow docs/agents/issue-tracker.md.
+Example when Linear manages the ticket and merge completes it: -->
 
-<!-- Example for Linear: -->
-Closes <Linear Team Name>-<ticket number>
-
-<!-- Example for not using Linear: -->
-Closes #<issue number>
+Closes <LINEAR-IDENTIFIER>
+GitHub issue: <GitHub issue URL>
 ```
 
 ## Release
