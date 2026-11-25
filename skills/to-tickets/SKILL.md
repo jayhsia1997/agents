@@ -44,6 +44,7 @@ Give each ticket its **blocking edges** — the other tickets that must complete
 Present the proposed breakdown as a numbered list. For each ticket, show:
 
 - **Title**: short descriptive name
+- **Project**: the project the ticket belongs to
 - **Blocked by**: which other tickets (if any) must complete first
 - **What it delivers**: the end-to-end behaviour this ticket makes work
 
